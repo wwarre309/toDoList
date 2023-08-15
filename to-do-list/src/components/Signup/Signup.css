@@ -1,0 +1,14 @@
+.App {
+    /* text-align: center; */
+    background-color:khaki;
+    }
+    
+    label {
+    display: block;
+    /* flex-direction: column; */
+    font-size: larger;
+    color: black;
+    padding: 5px;
+    }
+    
+    
