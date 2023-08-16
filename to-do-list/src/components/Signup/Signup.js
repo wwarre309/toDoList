@@ -11,6 +11,9 @@ function Signup() {
     const [password, setPassword] = useState('');
 
     const handleSubmit = (event) => {
+        setUsername(event.target.value);
+        setEmail(event.target.value);
+        setPassword(event.target.value);
         event.preventDefault();
         if (username === '' || email === '' || password === '') {
             alert("All Fields Must Be Entered")
@@ -29,8 +32,9 @@ function Signup() {
             <label>
                 Create Password: <input type='textarea' />
             </label>
-            <input type='submit' />
+            <button onClick={handleSubmit}>
             <Link to={'/ToDo'}>Sign Up</Link>
+            </button>
         </form>
     </div>
   )
