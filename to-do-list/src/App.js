@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Signup from './components/Signup/Signup';
 import ToDoForm from './components/ToDo/ToDoForm';
+import ToDoList from './components/ToDo/ToDoList';
 import ToDo from './components/ToDo/ToDo'
 import {BrowserRouter, Route ,Routes} from 'react-router-dom';
 
@@ -16,8 +17,9 @@ function App() {
           <Route path="/ToDo" element = {<ToDo/>} />
         </Routes>
       </BrowserRouter>
-      {/* <Signup /> */}
-      {/* <ToDoForm /> */}
+      <Signup /> 
+      {/* <ToDoList />
+       <ToDoForm /> */}
     </div>
   );
 }

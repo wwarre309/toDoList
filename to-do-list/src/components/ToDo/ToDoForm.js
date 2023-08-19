@@ -1,40 +1,40 @@
 import React, {useState} from 'react'
 
-function ToDoForm(props) {
-    const [errand, setErrand] = useState('');
-    // const handleAddition = (event) => {
-    //     setErrand(props.target.value);
-    //     event.preventDefault();
-    //     if (errand === '') {
-    //         alert("All Fields Must Be Entered")
-    //     } 
-    // }
+const ToDoForm = ({addTask}) => {
+    const [newTask, setNewTask] = useState('');
 
-  return (
-    <div className="ToDo">
-        <h1>Errands We Need To Add To Our To Do List</h1>
-        <form >
-            <label>
-                Input Errand Here: <input type='textarea' value={props.newTask} onChange={(e) => props.handleChange(e)}/>
-            </label>
-            <button 
-                onClick={(event) => {
-                    event.preventDefault();
-                    props.addItem(event)
-                }}
-            >
-                submit
-            </button> 
-            {/* <input type='submit' /> */}
+    const handleNewTask = (e) => {
+        setNewTask(e.target.value);
+    }
+    const addNewTask = (e) => {
+        e.preventDefault();
+        if (newTask.trim() !== '') {
+            addTask(newTask);
+            setNewTask('');
+        } else {
+            alert('Errand Required');
+        }
+    }
+   
+    return (
+        <div className="ToDo">
+            <h1>Errands We Need To Add To Our To Do List</h1>
+            <form onSubmit={addNewTask}>
+                <input
+                className="todo-input"
+                value={newTask}
+                onChange={handleNewTask}
+                type='textarea'
+                placeholder="What needs to get done?"
+                />
+    
+                <button type='submit'>
+                Add Errand
+                </button> 
+            </form>
 
-        </form>
-
-
-
-
-
-    </div>
-  )
+        </div>
+    
+)    
 }
-
 export default ToDoForm

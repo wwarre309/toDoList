@@ -1,26 +1,27 @@
 //input form to add to the list on Page 2
 import React, {useState} from "react";
+import './ToDo.css'
+
+
+//Toggle from ToDo
+//
 
 
 
-function ToDoList(props) {
-    
-
-   return (
-    <div>
-      <h2>Todo List</h2>
-      <ul>
-        {props.items.map(item => (
-          <li key={item.id}>
-            {item.title} - {item.completed ? "Completed" : "Not Completed"}{' '}
-            <input value={item} type="checkbox" />
-            <button onClick={(item.id)}>Delete</button>{' '}
-            <button onClick={(item.id)}>Edit</button>
-          </li>
-        ))}
-      </ul>
-    </div>
-   );        
-};
-
+function ToDoList({toDoList}) {
+//  const [items, setItems] = useState ([
+  
+ 
+//      ]);
+//   return (
+//     <div>
+//       <h2>To-Do list </h2>
+//       {items.map((items, index, key ) => (
+//             <p>{items.title}</p>
+           
+               
+//         ))}
+//     </div>
+//   )
+}
 export default ToDoList
